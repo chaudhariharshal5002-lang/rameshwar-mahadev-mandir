@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>श्री रामेश्वर महादेव मंदिर | Mahashivaratri</title>
+    <style>
+        :root {
+            --gold: #FFD700;
+            --glass: rgba(0, 0, 0, 0.8);
+            --text: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #050505 url('https://wallpapers.com/images/hd/bholenath-hd-shiva-adiyogi-statue-india-iyofa58ct7zv8vwc.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: var(--text);
+            scroll-behavior: smooth;
+        }
+
+        /* Ultra Realistic Header with Glassmorphism */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 20px;
+            text-align: center;
+            background: var(--glass);
+            backdrop-filter: blur(15px);
+            border-bottom: 2px solid var(--gold);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            color: var(--gold);
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+            margin-bottom: 10px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            color: var(--gold);
+            border: 1px solid var(--gold);
+            padding: 8px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            margin: 0 5px;
+        }
+
+        .lang-btn.active {
+            background: var(--gold);
+            color: black;
+        }
+
+        .lang-btn:hover {
+            background: var(--gold);
+            color: black;
+        }
+
+        /* Sections */
+        section {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.75);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold);
+        }
+
+        h2 { color: var(--gold); }
+
+        /* Donation Functional Area */
+        .donation-box {
+            text-align: center;
+        }
+
+        .qr-container img {
+            width: 200px;
+            border: 5px solid white;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .copy-btn {
+            display: block;
+            margin: 10px auto;
+            background: var(--gold);
+            border: none;
+            padding: 10px 20px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 50px;
+        }
+
+        /* Image Gallery */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .gallery img {
+            width: 200px;
+            height: 300px;
+            object-fit: cover;
+            border: 2px solid var(--gold);
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Video Section */
+        .video-container {
+            text-align: center;
+        }
+
+        video {
+            width: 100%;
+            max-width: 600px;
+            border: 2px solid var(--gold);
+            border-radius: 10px;
+        }
+
+        /* List Items */
+        ul { list-style: none; padding: 0; }
+        li { 
+            padding: 10px; 
+            border-bottom: 1px solid rgba(255,215,0,0.2); 
+            display: flex;
+            align-items: center;
+        }
+        li::before { content: "🔱"; margin-right: 10px; }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: black;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 id="main-title">श्री रामेश्वर महादेव मंदिर</h1>
+        <h6>manik nagar near rudra school Ambad link road CIDCO Nashik-422010</h6>
+        <div id="lang-selector">
+            <a href="https://www.instagram.com/shri.rameshwarmahadevman_trust?igsh=MXJ2NnViZ2Z5NWYweQ%3D%3D" target="_blank" class="lang-btn">Follow on Instagram</a>
+            <button class="lang-btn active" onclick="updateLanguage('en', this)">English</button>
+            <button class="lang-btn" onclick="updateLanguage('hin', this)">हिन्दी</button>
+            <button class="lang-btn" onclick="updateLanguage('mar', this)">मराठी</button>
+        </div>
+    </header>
+
+    <section class="donation-box">
+        <h2 id="don-title">Make a Donation</h2>
+        <p id="don-text">Scan to contribute to the Mahashivaratri Bhandara and Temple rituals.</p>
+        <div class="qr-container">
+            <img src="pay2.png" alt="QR Code">
+        </div>
+        <button class="copy-btn" onclick="copyUPI()">Copy UPI ID:702034varad@ibl </button>
+    </section>
+
+    <section id="image-gallery">
+        <h2>Gallery</h2>
+        <div class="gallery">
+            <img src="webtr.jpeg" alt="Temple Image 1">
+            <img src="webts.jpeg" alt="Temple Image 2">
+           
+        </div>
+    </section>
+
+    <section id="video-section">
+        <h2>Watch Our Video</h2>
+        <div class="video-container">
+            <video controls>
+                <source src="editloard.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </section>
+
+    <section id="about-section">
+        <h2 id="abt-title">About the Event</h2>
+        <p id="abt-content"></p>
+    </section>
+
+    <section id="purpose-section">
+        <h2 id="purp-title">Use of Funds</h2>
+        <ul id="purp-list"></ul>
+    </section>
+
+    <footer>
+        <p id="footer-note">© 2026 श्री रामेश्वर महादेव मंदिर. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Data Structure for working condition
+        const dictionary = {
+            en: {
+                abtTitle: "About Mahashivaratri",
+                abtContent: "A sacred night of worship, chants, and meditation dedicated to Lord Shiva. Your presence and support make this event divine.",
+                donTitle: "Support the Temple",
+                donText: "All donations are used for community service and spiritual rituals.",
+                purpTitle: "Where your money goes",
+                purpList: ["Free Meals (Prasadam)", "Temple Decoration", "Vedic Chants Event", "Poor Relief","Gau Seva"],
+                footer: "© 2026 Shri Rameshwar Mahadev Mandir. All Rights Reserved."
+            },
+            hin: {
+                abtTitle: "महाशिवरात्रि के बारे में",
+                abtContent: "भगवान शिव को समर्पित पूजा, मंत्रोच्चार और ध्यान की एक पवित्र रात। आपकी उपस्थिति और समर्थन इस आयोजन को दिव्य बनाते हैं।",
+                donTitle: "मंदिर का सहयोग करें",
+                donText: "सभी दान का उपयोग सामुदायिक सेवा और आध्यात्मिक अनुष्ठानों के लिए किया जाता है।",
+                purpTitle: "आपका पैसा कहाँ जाता है",
+                purpList: ["नि:शुल्क भोजन (प्रसादम)", "मंदिर की सजावट", "वैदिक मंत्रोच्चार कार्यक्रम", "गरीबों की सहायता" ,"गोसेवा"],
+                footer: "© 2026 श्री रामेश्वर महादेव मंदिर। सर्वाधिकार सुरक्षित।"
+            },
+            mar: {
+                abtTitle: "महाशिवरात्रीबद्दल",
+                abtContent: "भगवान शिवाला समर्पित उपासना, मंत्र आणि ध्यानाची एक पवित्र रात्र. तुमची उपस्थिती आणि पाठिंबा या कार्यक्रमाला दैवी बनवतो.",
+                donTitle: "मंदिराला मदत करा",
+                donText: "सर्व देणग्या समाजसेवा आणि आध्यात्मिक विधींसाठी वापरल्या जातात.",
+                purpTitle: "तुमचे पैसे कुठे वापरले जातात",
+                purpList: ["मोफत भोजन (महाप्रसाद)", "मंदिर सजावट", "वेदमंत्र पठण", "गरिबांना मदत" , "गोसेवा"],
+                footer: "© 2026 श्री रामेश्वर महादेव मंदिर. सर्व हक्क राखीव."
+            }
+        };
+
+        // Function to update the website content
+        function updateLanguage(lang, btn) {
+            // Update Buttons UI
+            document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const data = dictionary[lang];
+
+            // Set Text
+            document.getElementById('abt-title').innerText = data.abtTitle;
+            document.getElementById('abt-content').innerText = data.abtContent;
+            document.getElementById('don-title').innerText = data.donTitle;
+            document.getElementById('don-text').innerText = data.donText;
+            document.getElementById('purp-title').innerText = data.purpTitle;
+            document.getElementById('footer-note').innerText = data.footer;
+
+            // Build List Dynamically
+            const listContainer = document.getElementById('purp-list');
+            listContainer.innerHTML = "";
+            data.purpList.forEach(item => {
+                const li = document.createElement('li');
+                li.innerText = item;
+                listContainer.appendChild(li);
+            });
+        }
+
+        // Functional Utility: Copy UPI
+        function copyUPI() {
+            const upi = "temple@upi";
+            navigator.clipboard.writeText(upi);
+            alert("UPI ID Copied: " + upi);
+        }
+
+        // Run on start
+        window.onload = () => {
+            updateLanguage('en', document.querySelector('.lang-btn'));
+        };
+    </script>
+</body>
+</html>
